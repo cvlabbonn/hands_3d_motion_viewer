@@ -56,8 +56,8 @@ void MainWindow::changed_myTracker_Frames_INI_FIN( QString caller )   // buttonU
                 int WorstCaseSTART = 0;
                 int WorstCaseENDDD = myTracker->sequence.totalAllignedFrames - 1;
 
-                if (myTracker->starting_FrameTracker_INI < WorstCaseSTART)   {   myTracker->starting_FrameTracker_INI = WorstCaseSTART;   system("beep -f 1200 -l 50");             }
-                if (myTracker->starting_FrameTracker_INI > WorstCaseENDDD)   {   on_myButton_Reset_clicked();                             system("beep -f 1200 -l 50");   return;   }
+                if (myTracker->starting_FrameTracker_INI < WorstCaseSTART)   {   myTracker->starting_FrameTracker_INI = WorstCaseSTART;               }
+                if (myTracker->starting_FrameTracker_INI > WorstCaseENDDD)   {   on_myButton_Reset_clicked();                               return;   }
 
                 /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
                 /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////

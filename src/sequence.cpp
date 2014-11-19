@@ -198,7 +198,7 @@ void Sequence::updateFrameNumber()
         {
             currentFrameNumber = 0;
 
-            system("beep -f 1200 -l 50");
+
         }
 
 }
