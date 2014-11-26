@@ -26,22 +26,10 @@ include_directories(${OPENCV_INCLUDE_DIRS})
 link_directories(${OPENCV_LIBRARY_DIRS})
 add_definitions(${OPENCV_DEFINITIONS})
 
-foreach(i ${Boost_LIBRARIES})
-
-list(REMOVE_ITEM PCL_ALL_REQUIRED_LIBRARIES ${i})
-endforeach(i)
-
-message(INFO "${OpenCV_CUDA_LIBS_RELPATH}" )
 message("\n\nFound OpenCV\n\n")
 
 # OpenGL required
-#find_package(GLUT REQUIRED)
-#find_package(GLEW REQUIRED)
-#find_package(OpenGL)
-#if(NOT OPENGL_GLU_FOUND)
-#    message( FATAL_ERROR "No Glu found" )
-#endif(NOT OPENGL_GLU_FOUND)
-#include_directories(${GLEW_INCLUDE_DIRS})
+find_package(OpenGL)
 
 find_package (Threads)
 
@@ -89,5 +77,5 @@ ADD_EXECUTABLE(3d_viewer ${VIEWER_SOURCES} ${VIEWER_INCLUDES}
     ${QT_MOC}
     ${QT_FORMS})
 
-TARGET_LINK_LIBRARIES(3d_viewer ${GLUT_LIBRARY} ${QT_LIBRARIES} ${OpenCV_LIBS} ${CMAKE_THREAD_LIBS_INIT})
+TARGET_LINK_LIBRARIES(3d_viewer ${GLUT_LIBRARY} ${OPENGL_LIBRARIES} ${QT_LIBRARIES} ${OpenCV_LIBS} ${CMAKE_THREAD_LIBS_INIT})
 set_property(TARGET 3d_viewer PROPERTY COMPILE_DEFINITIONS QT_SHARED _REENTRANT)
