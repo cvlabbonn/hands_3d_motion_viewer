@@ -4,13 +4,7 @@
 #include <QtOpenGL>
 #include <QGLWidget>
 
-#include <GL/freeglut.h>
-
 #include <glwidget.h>
-
-#define GLM_FORCE_RADIANS
-#include <glm/gtc/type_ptr.hpp>
-#include <glm/gtx/quaternion.hpp>
 
 #include <tracker.h>
 

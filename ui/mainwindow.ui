@@ -556,7 +556,7 @@
        <x>0</x>
        <y>20</y>
        <width>77</width>
-       <height>122</height>
+       <height>61</height>
       </rect>
      </property>
      <layout class="QVBoxLayout" name="verticalLayout_18">
@@ -564,106 +564,10 @@
        <enum>QLayout::SetMaximumSize</enum>
       </property>
       <item>
-       <widget class="QRadioButton" name="myRadioButton_Spheres">
-        <property name="minimumSize">
-         <size>
-          <width>0</width>
-          <height>15</height>
-         </size>
-        </property>
-        <property name="maximumSize">
-         <size>
-          <width>16777215</width>
-          <height>15</height>
-         </size>
-        </property>
-        <property name="font">
-         <font>
-          <pointsize>9</pointsize>
-          <weight>50</weight>
-          <bold>false</bold>
-         </font>
-        </property>
-        <property name="focusPolicy">
-         <enum>Qt::NoFocus</enum>
-        </property>
-        <property name="text">
-         <string>Spheres</string>
-        </property>
-        <property name="checked">
-         <bool>false</bool>
-        </property>
-       </widget>
-      </item>
-      <item>
-       <widget class="QRadioButton" name="myRadioButton_Cones">
-        <property name="minimumSize">
-         <size>
-          <width>0</width>
-          <height>15</height>
-         </size>
-        </property>
-        <property name="maximumSize">
-         <size>
-          <width>16777215</width>
-          <height>15</height>
-         </size>
-        </property>
-        <property name="font">
-         <font>
-          <pointsize>9</pointsize>
-          <weight>50</weight>
-          <bold>false</bold>
-         </font>
-        </property>
-        <property name="focusPolicy">
-         <enum>Qt::NoFocus</enum>
-        </property>
-        <property name="text">
-         <string>Cones</string>
-        </property>
-        <property name="checked">
-         <bool>false</bool>
-        </property>
-       </widget>
-      </item>
-      <item>
-       <widget class="QRadioButton" name="myRadioButton_Both_Spheres_Cones">
-        <property name="minimumSize">
-         <size>
-          <width>0</width>
-          <height>15</height>
-         </size>
-        </property>
-        <property name="maximumSize">
-         <size>
-          <width>16777215</width>
-          <height>15</height>
-         </size>
-        </property>
-        <property name="font">
-         <font>
-          <pointsize>9</pointsize>
-          <weight>50</weight>
-          <bold>false</bold>
-         </font>
-        </property>
-        <property name="focusPolicy">
-         <enum>Qt::NoFocus</enum>
-        </property>
-        <property name="text">
-         <string>S+C</string>
-        </property>
-        <property name="checked">
+       <widget class="QRadioButton" name="myRadioButton_Points">
+        <property name="enabled">
          <bool>true</bool>
         </property>
-       </widget>
-      </item>
-      <item>
-       <widget class="QRadioButton" name="myRadioButton_Both_Points_Lines">
-        <property name="enabled">
-         <bool>false</bool>
-        </property>
         <property name="minimumSize">
          <size>
           <width>0</width>
@@ -687,7 +591,7 @@
          <enum>Qt::NoFocus</enum>
         </property>
         <property name="text">
-         <string>P+L</string>
+         <string>Points</string>
         </property>
         <property name="checked">
          <bool>false</bool>
@@ -697,7 +601,7 @@
       <item>
        <widget class="QRadioButton" name="myRadioButton_Lines">
         <property name="enabled">
-         <bool>false</bool>
+         <bool>true</bool>
         </property>
         <property name="minimumSize">
          <size>
@@ -730,9 +634,9 @@
        </widget>
       </item>
       <item>
-       <widget class="QRadioButton" name="myRadioButton_Points">
+       <widget class="QRadioButton" name="myRadioButton_Both_Points_Lines">
         <property name="enabled">
-         <bool>false</bool>
+         <bool>true</bool>
         </property>
         <property name="minimumSize">
          <size>
@@ -757,10 +661,10 @@
          <enum>Qt::NoFocus</enum>
         </property>
         <property name="text">
-         <string>Points</string>
+         <string>P+L</string>
         </property>
         <property name="checked">
-         <bool>false</bool>
+         <bool>true</bool>
         </property>
        </widget>
       </item>
@@ -1329,6 +1233,9 @@
     </property>
    </widget>
    <widget class="QPlainTextEdit" name="myTextEdit_TRACKER_Load_Pose_RESULT">
+    <property name="enabled">
+     <bool>false</bool>
+    </property>
     <property name="geometry">
      <rect>
       <x>680</x>
@@ -1338,7 +1245,7 @@
      </rect>
     </property>
     <property name="plainText">
-     <string>/home/cvg11/Downloads/</string>
+     <string>...functionality coming soon</string>
     </property>
    </widget>
    <widget class="QSlider" name="mySliderOpenGL">
@@ -1367,6 +1274,9 @@
     </property>
    </widget>
    <widget class="QPushButton" name="myButton_TRACKER_Load_Pose_RESULT">
+    <property name="enabled">
+     <bool>false</bool>
+    </property>
     <property name="geometry">
      <rect>
       <x>810</x>
@@ -1654,6 +1564,9 @@
     </layout>
    </widget>
    <widget class="QPushButton" name="myButton_TRACKER_Load_Motion_File">
+    <property name="enabled">
+     <bool>false</bool>
+    </property>
     <property name="geometry">
      <rect>
       <x>680</x>

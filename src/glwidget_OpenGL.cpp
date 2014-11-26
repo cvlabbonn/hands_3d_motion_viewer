@@ -31,7 +31,6 @@ void GLWidget::myOpenGL_Flags()
 
         glEnable(GL_POINT_SMOOTH);
 
-        glEnable(GL_BLEND);
         glDepthMask(GL_FALSE);
 
         glBlendFunc(GL_SRC_ALPHA, GL_ONE_MINUS_SRC_ALPHA);

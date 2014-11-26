@@ -115,12 +115,9 @@ void MainWindow::initialize()
         on_myCheckBox_MESH_FILL_clicked(); // regulate mesh alpha
         //////////////////////////////////
 
-        ui->myLabel_transMesh->              setVisible( false );
-        ui->myLabel_transSkeleton->          setVisible( false );
-        ui->myLabel_transLocalCoord->        setVisible( false );
-        ui->myRadioButton_Both_Points_Lines->setVisible( false );
-        ui->myRadioButton_Lines->            setVisible( false );
-        ui->myRadioButton_Points->           setVisible( false );
+        ui->myLabel_transMesh->      setVisible( false );
+        ui->myLabel_transSkeleton->  setVisible( false );
+        ui->myLabel_transLocalCoord->setVisible( false );
 
         BackGroundButtons_EnableDisable( false );
 

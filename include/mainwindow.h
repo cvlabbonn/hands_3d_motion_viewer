@@ -206,12 +206,6 @@ private slots:
 
     void on_mySlider_transpLocalCoord_valueChanged(int value);
 
-    void on_myRadioButton_Spheres_clicked();
-
-    void on_myRadioButton_Cones_clicked();
-
-    void on_myRadioButton_Both_Spheres_Cones_clicked();
-
     void on_myRadioButton_Tracker_Background_RGB_clicked();
 
     void on_myRadioButton_Tracker_Background_RGBD_clicked();

@@ -329,34 +329,11 @@ void GLWidget::myRenderSkeleton()
                                         if (   (_mySkeletonType == "Points")   ||   (_mySkeletonType == "Both_Points_Lines")   )             {          glPointSize(5);                             glBegin(GL_POINTS);         glVertex3d( _startBoneVec3(0),_startBoneVec3(1),_startBoneVec3(2) );
                                                                                                                                                                                                     glEnd();
                                                                                                                                              }
-                                        if (   (_mySkeletonType == "Spheres")  ||   (_mySkeletonType == "Both_Spheres_Cones")  )             {          glPushMatrix();
-                                                                                                                                                        glTranslated( _startBoneVec3(0),_startBoneVec3(1),_startBoneVec3(2) );
-                                                                                                                                                        if (_myRender_MESH_FILL)   glutSolidSphere(2,30,30);
-                                                                                                                                                        else                       glutWireSphere( 2,30,30);
-                                                                                                                                                        glPopMatrix();
-                                                                                                                                             }
                                         if (   (_mySkeletonType == "Lines")    ||   (_mySkeletonType == "Both_Points_Lines")   )             {          glLineWidth(1);                             glBegin(GL_LINES);                      glVertex3d( _startBoneVec3(0),_startBoneVec3(1),_startBoneVec3(2) );
                                                                                                                                                                                                                                             glVertex3d( _endddBoneVec3(0),_endddBoneVec3(1),_endddBoneVec3(2) );
 
                                                                                                                                                                                                     glEnd();
                                                                                                                                              }
-                                        if (   (_mySkeletonType == "Cones")    ||   (_mySkeletonType == "Both_Spheres_Cones")  )             {          glPushMatrix();
-                                                                                                                                                                            float boneLength = ( _endddBoneVec3  - _startBoneVec3 ).norm();
-                                                                                                                                                                            glTranslated(        _startBoneVec3(0),_startBoneVec3(1),_startBoneVec3(2) );
-                                                                                                                                                                            glm::vec3 _glmStart( _startBoneVec3(0),_startBoneVec3(1),_startBoneVec3(2) );
-                                                                                                                                                                            glm::vec3 _glmEnddd( _endddBoneVec3(0),_endddBoneVec3(1),_endddBoneVec3(2) );
-                                                                                                                                                                            glm::vec3 _glmDirrr   = glm::normalize( _glmEnddd - _glmStart ); // important to normalize!!!
-                                                                                                                                                                            glTranslated(        _glmDirrr[0],_glmDirrr[1],_glmDirrr[2] ); // cone doesn't get inside shpere/joint
-                                                                                                                                                                            glm::quat _glmRotQuat = glm::rotation( glm::vec3(0,0,1),_glmDirrr);
-                                                                                                                                                                          //glm::mat4 _glmRotMat = glm::mat4_cast(_glmRotQuat); // ok
-                                                                                                                                                                            glm::mat4 _glmRotMat = glm::toMat4   (_glmRotQuat); // ok
-                                                                                                                                                                          //std::cout <<  glm::to_string(_glmDirrr) << std::endl;
-                                                                                                                                                                            glMultMatrixf(glm::value_ptr(_glmRotMat));
-                                                                                                                                                                            if (_myRender_MESH_FILL)    glutSolidCone( 2.2,boneLength-2,30,10*boneLength ); // cone doesn't get inside shpere/joint
-                                                                                                                                                                            else                        glutWireCone(  2.2,boneLength-2,30,10*boneLength ); // cone doesn't get inside shpere/joint
-                                                                                                                                                        glPopMatrix();
-                                                                                                                                             }
-
                                                                                                                                                         glPointSize(1);
                                                                                                                                                         glLineWidth(1);
 

@@ -66,18 +66,12 @@ void MainWindow::on_myButtonColor_Mesh3_clicked()       {     ui->myButtonColor_
 void MainWindow::on_myRadioButton_Points_clicked()               {   changedRadiosForSkeleton();    }
 void MainWindow::on_myRadioButton_Lines_clicked()                {   changedRadiosForSkeleton();    }
 void MainWindow::on_myRadioButton_Both_Points_Lines_clicked()    {   changedRadiosForSkeleton();    }
-void MainWindow::on_myRadioButton_Spheres_clicked()              {   changedRadiosForSkeleton();    }
-void MainWindow::on_myRadioButton_Cones_clicked()                {   changedRadiosForSkeleton();    }
-void MainWindow::on_myRadioButton_Both_Spheres_Cones_clicked()   {   changedRadiosForSkeleton();    }
 
 void MainWindow::changedRadiosForSkeleton()
 {
         if      ( ui->myRadioButton_Points            ->isChecked() == true )    mySkeletonType = "Points";
         else if ( ui->myRadioButton_Lines             ->isChecked() == true )    mySkeletonType = "Lines";
         else if ( ui->myRadioButton_Both_Points_Lines ->isChecked() == true )    mySkeletonType = "Both_Points_Lines";
-        else if ( ui->myRadioButton_Spheres           ->isChecked() == true )    mySkeletonType = "Spheres";
-        else if ( ui->myRadioButton_Cones             ->isChecked() == true )    mySkeletonType = "Cones";
-        else if ( ui->myRadioButton_Both_Spheres_Cones->isChecked() == true )    mySkeletonType = "Both_Spheres_Cones";
 
         ui->myOpenGLWidget->passSkeletonType(mySkeletonType);
 }
@@ -251,6 +245,7 @@ void MainWindow::changedTypesBackground()
 
 void MainWindow::on_myButton_TRACKER_Load_Motion_File_clicked()
 {
+    emit openGL_AutoPlay_SIGNAL( false);
     QString path = ui->myTextEdit_TRACKER_Load_Pose_RESULT->toPlainText();
   //QString folder = QFileDialog::getExistingDirectory( this, tr( "Select Folder" ), path );
     QString folder = QFileDialog::getOpenFileName(      this, tr( "Select Folder" ), path );
