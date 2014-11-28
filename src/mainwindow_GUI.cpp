@@ -246,15 +246,15 @@ void MainWindow::changedTypesBackground()
 void MainWindow::on_myButton_TRACKER_Load_Motion_File_clicked()
 {
     emit openGL_AutoPlay_SIGNAL( false);
+    ui->myCheck_OpenGL_AutoPlay->setChecked(false);
     QString path = ui->myTextEdit_TRACKER_Load_Pose_RESULT->toPlainText();
-  //QString folder = QFileDialog::getExistingDirectory( this, tr( "Select Folder" ), path );
-    QString folder = QFileDialog::getOpenFileName(      this, tr( "Select Folder" ), path );
+    QString folder = QFileDialog::getExistingDirectory( this, tr( "Select Folder" ), path);
 
-    //////////////////////////////
-    QApplication::processEvents();
-    //////////////////////////////
+    if ( folder != "" ) {
+        ui->myTextEdit_TRACKER_Load_Pose_RESULT->setPlainText( folder );
+        on_myButton_TRACKER_Load_Pose_RESULT_clicked();
+    }
 
-    ui->myTextEdit_TRACKER_Load_Pose_RESULT->setPlainText( folder );
 }
 
 
