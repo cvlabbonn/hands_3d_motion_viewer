@@ -149,6 +149,7 @@ public:
 
 
 private:
+    void on_myButton_TRACKER_Load_Pose_RESULT_clicked();
 
 private slots:
 
@@ -223,8 +224,6 @@ private slots:
     void on_myCheckBox_MESH_FILL_clicked();
 
     void on_myCheck_FingertipVertices_Centroid_clicked();
-
-    void on_myButton_TRACKER_Load_Pose_RESULT_clicked();
 
     void on_myButton_TRACKER_Load_Motion_File_clicked();
 
