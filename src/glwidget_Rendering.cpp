@@ -19,10 +19,6 @@ void GLWidget::myPickColor( int modelID, QString &boneName, QString alphaChooser
     double alphaValue = 1;
 
     if      (alphaChooser == "usual")       alphaValue = _myAlphaValues[1];
-    else
-    {
-        qDebug() << "gagaga - GLWidget::myPickColor - " << alphaChooser;
-    }
 
     if      (boneName.contains("R")     && boneName.contains("Lower Arm")){    glPointSize(20);   glColor4d(   (float)myColor_Right.toRgb().red()/255,   (float)myColor_Right.toRgb().green()/255,  (float)myColor_Right.toRgb().blue()/255,  alphaValue   );     }   // Lower Arm R
     else if (boneName.contains("L")     && boneName.contains("Lower Arm")){    glPointSize(20);   glColor4d(   (float)myColor_Left.toRgb(). red()/255,   (float)myColor_Left.toRgb(). green()/255,  (float)myColor_Left.toRgb(). blue()/255,  alphaValue   );     }   // Lower Arm L
@@ -44,10 +40,6 @@ void GLWidget::myPartColor( int modelID, QString &boneName, QString alphaChooser
 
     double                                  alphaValue = 1;
     if      (alphaChooser == "usual")       alphaValue = _myAlphaValues[1];
-    else
-    {
-        qDebug() << "gagaga - GLWidget::myPickColor - " << alphaChooser;
-    }
 
     if      (boneName.contains("R")     && boneName.contains("Lower Arm")){    glPointSize(20);   glColor4d(   (float)myColor_Right.toRgb().red()/255,   (float)myColor_Right.toRgb().green()/255,  (float)myColor_Right.toRgb().blue()/255,  alphaValue   );     }   // Lower Arm R
     else if (boneName.contains("L")     && boneName.contains("Lower Arm")){    glPointSize(20);   glColor4d(   (float)myColor_Left. toRgb().red()/255,   (float)myColor_Left.toRgb(). green()/255,  (float)myColor_Left.toRgb(). blue()/255,  alphaValue   );     }   // Lower Arm L
@@ -342,7 +334,6 @@ void GLWidget::myRenderSkeleton()
 
                                         if (_myRender_LocalCoord == true)
                                         {
-    //                                                                                                                                                                                                                        qDebug() << "LOCAL-COORD";
 
                                                     glLineWidth(1);
 

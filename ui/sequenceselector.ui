@@ -7,7 +7,7 @@
     <x>0</x>
     <y>0</y>
     <width>550</width>
-    <height>442</height>
+    <height>484</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -17,7 +17,7 @@
    <property name="geometry">
     <rect>
      <x>400</x>
-     <y>400</y>
+     <y>440</y>
      <width>121</width>
      <height>27</height>
     </rect>
@@ -37,6 +37,22 @@
    </property>
    <property name="text">
     <string>Please select the sequence to view</string>
+   </property>
+  </widget>
+  <widget class="QLabel" name="label_2">
+   <property name="geometry">
+    <rect>
+     <x>20</x>
+     <y>400</y>
+     <width>481</width>
+     <height>41</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>(*) Only for comparison with the FORTH tracker.</string>
+   </property>
+   <property name="wordWrap">
+    <bool>true</bool>
    </property>
   </widget>
   <widget class="QWidget" name="">
@@ -69,37 +85,9 @@
        </widget>
       </item>
       <item>
-       <widget class="QRadioButton" name="sequenceRadio_09">
-        <property name="text">
-         <string>09 - Flying</string>
-        </property>
-       </widget>
-      </item>
-      <item>
-       <widget class="QRadioButton" name="sequenceRadio_08">
-        <property name="text">
-         <string>08 - Grasping</string>
-        </property>
-       </widget>
-      </item>
-      <item>
-       <widget class="QRadioButton" name="sequenceRadio_06">
-        <property name="text">
-         <string>06 - Tips Blending</string>
-        </property>
-       </widget>
-      </item>
-      <item>
        <widget class="QRadioButton" name="sequenceRadio_03">
         <property name="text">
          <string>03 - Crossing and Twisting</string>
-        </property>
-       </widget>
-      </item>
-      <item>
-       <widget class="QRadioButton" name="sequenceRadio_05">
-        <property name="text">
-         <string>05 - Dancing</string>
         </property>
        </widget>
       </item>
@@ -111,9 +99,37 @@
        </widget>
       </item>
       <item>
+       <widget class="QRadioButton" name="sequenceRadio_05">
+        <property name="text">
+         <string>05 - Dancing</string>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QRadioButton" name="sequenceRadio_06">
+        <property name="text">
+         <string>06 - Tips Blending</string>
+        </property>
+       </widget>
+      </item>
+      <item>
        <widget class="QRadioButton" name="sequenceRadio_07">
         <property name="text">
          <string>07 - Hugging</string>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QRadioButton" name="sequenceRadio_09">
+        <property name="text">
+         <string>09 - Flying</string>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QRadioButton" name="sequenceRadio_08">
+        <property name="text">
+         <string>08 - Grasping</string>
         </property>
        </widget>
       </item>
@@ -143,23 +159,23 @@
        </widget>
       </item>
       <item>
-       <widget class="QRadioButton" name="sequenceRadio_18">
+       <widget class="QRadioButton" name="sequenceRadio_13">
         <property name="text">
-         <string>18 - Bending a Rope</string>
+         <string>13 - Flying (*)</string>
         </property>
        </widget>
       </item>
       <item>
-       <widget class="QRadioButton" name="sequenceRadio_17">
+       <widget class="QRadioButton" name="sequenceRadio_14">
         <property name="text">
-         <string>17 - Bending a Pipe</string>
+         <string>14 - Rock Gesture (*) </string>
         </property>
        </widget>
       </item>
       <item>
-       <widget class="QRadioButton" name="sequenceRadio_20">
+       <widget class="QRadioButton" name="sequenceRadio_15">
         <property name="text">
-         <string>20 - Moving a Cube with one hand</string>
+         <string>15 - Moving a Ball with one hand</string>
         </property>
        </widget>
       </item>
@@ -171,9 +187,16 @@
        </widget>
       </item>
       <item>
-       <widget class="QRadioButton" name="sequenceRadio_14">
+       <widget class="QRadioButton" name="sequenceRadio_17">
         <property name="text">
-         <string>14 - Rock Gesture (*) </string>
+         <string>17 - Bending a Pipe</string>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QRadioButton" name="sequenceRadio_18">
+        <property name="text">
+         <string>18 - Bending a Rope</string>
         </property>
        </widget>
       </item>
@@ -186,9 +209,9 @@ occlusion of a manipulating finger</string>
        </widget>
       </item>
       <item>
-       <widget class="QRadioButton" name="sequenceRadio_15">
+       <widget class="QRadioButton" name="sequenceRadio_20">
         <property name="text">
-         <string>15 - Moving a Ball with one hand</string>
+         <string>20 - Moving a Cube with one hand</string>
         </property>
        </widget>
       </item>
@@ -197,13 +220,6 @@ occlusion of a manipulating finger</string>
         <property name="text">
          <string>21 - Moving a Cube with one hand and
 occlusion of a manipulating finger</string>
-        </property>
-       </widget>
-      </item>
-      <item>
-       <widget class="QRadioButton" name="sequenceRadio_13">
-        <property name="text">
-         <string>13 - Flying (*)</string>
         </property>
        </widget>
       </item>

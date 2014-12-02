@@ -61,7 +61,7 @@ Animation::Animation(
         //////////////////////////////////////////////////////////////////////////////////////
         //////////////////////////////////////////////////////////////////////////////////////
 
-        poseMatrices_LoadFromFile( -666 );
+        poseMatrices_LoadFromFile( -888 );
 
         //////////////////////////////////////////////////////////////////////////////////////
         //////////////////////////////////////////////////////////////////////////////////////
@@ -93,6 +93,7 @@ void Animation::readCheatIndexTXT( QString myFileString_IndexCheat_IN )
 
         if( !myFile.isOpen() )
         {
+            //TODO: message box
             qDebug() << "\n\n\n   Animation::readCheatIndexTXT - ERROR, unable to open **" << myFileString_IndexCheat_IN << "** for IndexCheat Input \n\n\n";
             return;
         }

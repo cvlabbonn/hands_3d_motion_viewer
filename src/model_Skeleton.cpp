@@ -11,6 +11,7 @@ void Model::readSkeleton( QString myFileString_Skeleton )
 
         if( !myFile.isOpen() )
         {
+            //TODO::Messagebox
             qDebug() << "readSkeleton - ERROR, unable to open **" << myFileString_Skeleton << "** for Skeleton Input";
             return;
         }
@@ -23,7 +24,7 @@ void Model::readSkeleton( QString myFileString_Skeleton )
         QString     myStringFromFile;
 
         myStringFromFile = myInputFileToString.readAll();
-        QRegExp koftis("\r\n"); // \\s - spaei kai to "Lower Arm" !!!
+        QRegExp koftis("\r\n");
         myStringListFromFile = myStringFromFile.split(koftis, QString::SkipEmptyParts);
 
         int length = myStringListFromFile.length();
@@ -33,7 +34,7 @@ void Model::readSkeleton( QString myFileString_Skeleton )
         //////////////////////////////////////////////////////////////////////////////////////////////
         //////////////////////////////////////////////////////////////////////////////////////////////
 
-        totalBones = (length-1) / 3; // OK, giati sto TXT exei 3 metadata gia kathe Bone ;)
+        totalBones = (length-1) / 3;
 
         //////////////////////////////////
         skeleton.bones.clear();
@@ -42,7 +43,7 @@ void Model::readSkeleton( QString myFileString_Skeleton )
 
         int counter = 0;
 
-        skeleton.bones[0].fatherAddress = -666;
+        skeleton.bones[0].fatherAddress = -888;
 
         for (int i=1; i<length; i+=3)
         {
@@ -66,7 +67,7 @@ void Model::readSkeleton( QString myFileString_Skeleton )
                 int fatherAdd = skeleton.bones[counter].fatherAddress;
                 if (fatherAdd > -1)
                 {
-                        skeleton.bones[ fatherAdd ].childrenVector.append(i/3);       // @@
+                        skeleton.bones[ fatherAdd ].childrenVector.append(i/3);
                 }
 
                 counter++;

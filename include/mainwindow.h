@@ -3,6 +3,7 @@
 
 #include <QMainWindow>
 #include <QFileDialog>
+#include <QMessageBox>
 
 #include <typesBackground.h>
 
@@ -152,6 +153,7 @@ private:
     SequenceSelector seq_Sel;
     void on_myButton_TRACKER_Load_Pose_RESULT_clicked();
     void sequence_selector();
+    void error_manager( int error);
 
 
 

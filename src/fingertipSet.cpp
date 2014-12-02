@@ -23,18 +23,19 @@ FingertipSet::FingertipSet( QString basePath_Detections_ForAllCameras_IN, QStrin
 
         if( !myFile.isOpen() )
         {
-            qDebug() << "\n\n\n   Animation - ERROR, unable to open **" << myFileString_IndexCheat_IN << "** for IndexCheat Input \n\n\n";
+            //TODO: messagebox
+            qDebug() << "\n\n\n   FingertipSet::FingertipSet - ERROR, unable to open **" << myFileString_IndexCheat_IN << "**  \n\n\n";
             return;
         }
 
         QTextStream myStream(&myFile);
 
         QString dummyDescr;
-        int     dummyValuy;
+        int     dummyValue;
 
-        myStream >> dummyDescr;       myStream >> totalAllignedFrames;      //qDebug() << dummyDescr << totalAllignedFrames;
-        myStream >> dummyDescr;       myStream >> dummyValuy;               //qDebug() << dummyDescr << dummyValuy;
-        myStream >> dummyDescr;       myStream >> videoOffset;              //qDebug() << dummyDescr << videoOffset;
+        myStream >> dummyDescr;       myStream >> totalAllignedFrames;
+        myStream >> dummyDescr;       myStream >> dummyValue;
+        myStream >> dummyDescr;       myStream >> videoOffset;
 
         myFile.close();
 }
@@ -58,8 +59,8 @@ void FingertipSet::read_Curr_Detections_fromFile( int camID, int frameNumber )
         //////////////////////////////////////////////////////////////////////////////////////////
         if (  (frameNumber < 0)  ||  (frameNumber >= totalAllignedFrames)  )
         {
-          //qDebug() << "\n\n\n   VideoSequence::loadCurrentFrame - OutOfBounds ERROR   \n\n\n";
-          //qDebug() << frameNumber << totalAllignedFrames << videoOffset;
+            //TODO: message box
+            qDebug() << "\n\n\n   FingertipSet::read_Curr_Detections_fromFile   \n\n\n";
             return;
         }
 
@@ -87,7 +88,8 @@ void FingertipSet::read_Curr_Detections_fromFile( int camID, int frameNumber )
 
         if( !myFile.isOpen() )
         {
-          //qDebug() << "FingertipSet::read_Curr_Detections_fromFile - ERROR, unable to open **" << myFileString_DETECTION << "** for Detections Input";
+            //TODO: message box
+            qDebug() << "FingertipSet::read_Curr_Detections_fromFile - ERROR, unable to open **" << myFileString_DETECTION << "** for Detections Input";
             return;
         }
 

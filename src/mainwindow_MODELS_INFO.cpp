@@ -16,6 +16,7 @@ void MainWindow::read_MODELS_INFO_TXT( QString myFileString_MODELS_INFO_TXT )
 
         myFile.open(QIODevice::ReadOnly);
 
+        //TODO: messagebox
         if (myFile.exists() == false)   {   qDebug() << "MainWindow::read_MODELS_INFO_TXT - File **" << myFileString_MODELS_INFO_TXT << "** DOESN'T exist !!!!!";   return;     }
         if( !myFile.isOpen() )          {   qDebug() << "MainWindow::read_MODELS_INFO_TXT - File **" << myFileString_MODELS_INFO_TXT << "** DOESN'T open !!!!!";    return;     }
 

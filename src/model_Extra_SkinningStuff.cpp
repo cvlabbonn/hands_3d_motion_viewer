@@ -137,7 +137,7 @@ void Model::create_thresholded_SkinningWeights()
                 skin.skinnedVertices[vvv].skinWeights_Thresholded.resize( totalSkinningBones );
                 skin.skinnedVertices[vvv].skinWeights_Thresholded.fill(0);
 
-                float maxxx      = -666;
+                float maxxx      = -888;
                 int   mainBoneID = -1;
 
                 for (int j=0; j<totalSkinningBones; j++)

@@ -16,12 +16,6 @@
 void MainWindow::refreshPathsALL_ForCurrentSequence()
 {
 
-      //qDebug() << "";
-      //qDebug() << "%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%";
-      //qDebug() << "MainWindow::refreshPathsALL_ForCurrentSequence START  ---  RadioSequenceID_String - " << RadioSequenceID_String;
-      //qDebug() << "%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%";
-      //qDebug() << "";
-
         INPUT_dynamicStringPart = QString("myTracker/") + "RGBD" + "_"  + RadioSequenceID_String + "/";
         QDir basedir = QDir(QApplication::applicationDirPath());
         basedir.cdUp();
@@ -30,17 +24,6 @@ void MainWindow::refreshPathsALL_ForCurrentSequence()
         INPUT_FINAL_PATH_IndexCheat      = basePath + "/Configs/"     + RadioSequenceID_String + "/" + INPUT_Filename_IndexBounds;
         INPUT_FINAL_PATH_MODELS_INFO_TXT = basePath + "/Configs/"     + RadioSequenceID_String + "/" + INPUT_Filename_MODELS_INFO_TXT;
         INPUT_FINAL_PATH_Video           = "/lala/";
-
-        //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-        //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-        //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-      //qDebug() << "MainWindow::refreshPathsALL_ForCurrentSequence - INPUT_FINAL_PATH__Cameras        -" << INPUT_FINAL_PATH_Cameras;
-      //qDebug() << "MainWindow::refreshPathsALL_ForCurrentSequence - INPUT_FINAL_PATH_MODELS_INFO_TXT -" << INPUT_FINAL_PATH_MODELS_INFO_TXT;
-      //qDebug() << "MainWindow::refreshPathsALL_ForCurrentSequence - INPUT_FINAL_PATH__IndexCheat     -" << INPUT_FINAL_PATH_IndexCheat;
-      //qDebug() << "MainWindow::refreshPathsALL_ForCurrentSequence - INPUT_FINAL_PATH__Video          -" << INPUT_FINAL_PATH_Video;
-        //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-        //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-        //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
 }
 
@@ -107,43 +90,9 @@ void MainWindow::readInputs_AND_passToOpenGL()
         readModelsRenderability();
         //////////////////////////
         trackerCreatedOnce = true;
-        //////////////////////////
-
-
-        ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-        ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-        ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-        //for (int modelID=0; modelID<myTracker->sequence.posedAnimations[0].modelSet.totalModels; modelID++)
-        //{
-        //    qDebug() << "########################################################"
-        //                                         << myTracker->sequence.posedAnimations[0].modelSet.models[modelID].name << "\t" << modelID+1 << "/" << myTracker->sequence.posedAnimations[0].modelSet.totalModels;
-        //    qDebug() << "totalBones            " << myTracker->sequence.posedAnimations[0].modelSet.models[modelID].totalBones;
-        //    qDebug() << "totalSkeletonFrames   " << myTracker->sequence.posedAnimations[0].modelSet.models[modelID].totalSkeletonFrames;
-        //    qDebug() << "totalSkinningBones    " << myTracker->sequence.posedAnimations[0].modelSet.models[modelID].totalSkinningBones;
-        //    qDebug() << "totalTriangles        " << myTracker->sequence.posedAnimations[0].modelSet.models[modelID].totalTriangles;
-        //    qDebug() << "totalVertices         " << myTracker->sequence.posedAnimations[0].modelSet.models[modelID].totalVertices;
-        //    qDebug() << "total_AxDOFs          " << myTracker->sequence.posedAnimations[0].modelSet.models[modelID].total_AxDOFs << "---";
-        //}
-        //    qDebug() << "";
-        //    qDebug() << "totalAllignedFrames    " << myTracker->sequence.posedAnimations[0].totalAllignedFrames;
-        //    qDebug() << "motionOffset           " << myTracker->sequence.posedAnimations[0].motionOffset;
-        //    qDebug() << "";
-        //    qDebug() << "totalAllignedFrames    " << myTracker->sequence.videoSequence.totalAllignedFrames;
-        //    qDebug() << "videoOffset            " << myTracker->sequence.videoSequence.videoOffset;
-        //    qDebug() << "frameHeight            " << myTracker->sequence.videoSequence.frameHeight;
-        //    qDebug() << "frameWidth             " << myTracker->sequence.videoSequence.frameWidth;
-        //    qDebug() << "frameRate              " << myTracker->sequence.videoSequence.frameRate;
-        //    qDebug() << "";
-        //    qDebug() << "totalCameras           " << myTracker->sequence.cameraSet.totalCameras;
-        //    qDebug() << "currentCameraID        " << myTracker->sequence.cameraSet.currentCameraID;
-        ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-        ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-        ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-
-
         /////////////////////////////////////////////////////////
         /////////////////////////////////////////////////////////
-        update_ONLYLabels_OfSlider_SEQ_LIMITS_AND_CURR_FR( 0 );     // Don't move !!!
+        update_ONLYLabels_OfSlider_SEQ_LIMITS_AND_CURR_FR( 0 );
         /////////////////////////////////////////////////////////
         /////////////////////////////////////////////////////////
         _myColorizer();

@@ -19,7 +19,6 @@ void Animation::transform_ModelSet_MESHES( int frameNumber_XwrisOffset )
                 ////////////////////////////////////////////////////////////////////////////////////////////
                 if (  (frameNumber_XwrisOffset < 0)  ||  (frameNumber_XwrisOffset >= totalAllignedFrames)  )
                 {
-                  //qDebug() << "\n\n\n   Animation::transform_ModelSet_MESHES - OutOfBounds ERROR  \n\n\n";
                     return;
                 }
                 ////////////////////////////////////////////////////////////////////////////////////////////
@@ -151,7 +150,6 @@ void Animation::transform_ModelSet_SKELETONS( int frameNumber_XwrisOffset )
         ////////////////////////////////////////////////////////////////////////////////////////////
         if (  (frameNumber_XwrisOffset < 0)  ||  (frameNumber_XwrisOffset >= totalAllignedFrames)  )
         {
-          //qDebug() << "\n\n\n   Animation::transform_ModelSet_SKELETONS - OutOfBounds ERROR \n\n\n";
             return;
         }
         ////////////////////////////////////////////////////////////////////////////////////////////
@@ -292,7 +290,6 @@ void Animation::calculate_RotationAxes( int frameNumber_XwrisOffset )
         /////////////////////////////////////////////////////////////////////////////////////////////
         if (  (frameNumber_XwrisOffset < 0)  ||  (frameNumber_XwrisOffset >= totalAllignedFrames)  )
         {
-            //qDebug() << "\n\n\n   Animation::calculate_RotationAxes - OutOfBounds ERROR   " << frameNumber_XwrisOffset << "\n\n\n";
             return;
         }
         /////////////////////////////////////////////////////////////////////////////////////////////

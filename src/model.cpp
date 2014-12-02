@@ -20,12 +20,6 @@ Model::Model(   QString RadioSequenceID_String,
         QString fileString_Skin     = basePath + "/Models/" + RadioSequenceID_String + "/" + INPUT_fileNameOhneExtension + INPUT_EXTENSSS_Skin;
         QString fileString_Limits   = basePath + "/Models/" + RadioSequenceID_String + "/" + INPUT_fileNameOhneExtension + INPUT_EXTENSSS_Limits;
                 fileString_VOI      = basePath + "/Models/" + RadioSequenceID_String + "/" + INPUT_fileNameOhneExtension + INPUT_EXTENSSS_VOI;
-
-        //qDebug() << "Model::Model -" << fileString_Mesh;
-        //qDebug() << "Model::Model -" << fileString_Skeleton;
-        //qDebug() << "Model::Model -" << fileString_Skin;
-        //qDebug() << "Model::Model -" << fileString_Limits;
-
         /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
         /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
         name = INPUT_fileNameOhneExtension;

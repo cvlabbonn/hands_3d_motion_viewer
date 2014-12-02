@@ -10,6 +10,7 @@ void Model::readMesh_OFF( QString myFileString_Mesh )
 
         if(!myFileIN.isOpen())
         {
+            //TODO:: messagebox
             qDebug() << "Animation::readMesh_OFF->mesh - Error, unable to open" << myFileString_Mesh << "for input";
             return;
         }

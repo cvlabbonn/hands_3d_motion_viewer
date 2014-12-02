@@ -41,7 +41,6 @@ void MainWindow::keyPressEvent(QKeyEvent *myKey)
                                                         on_myCheck_FingertipDetections_clicked();
                                                     }
         else if (myKey->key() == Qt::Key_Escape)    {   this->close();
-                                                      //std::cout << "\n\n\n----- Manually (ESC) Doing -->> exit() !!!\n\n" << std::endl;
                                                         exit(-1);
                                                     }
 

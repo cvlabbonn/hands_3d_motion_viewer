@@ -114,7 +114,7 @@ void MainWindow::update_ONLYLabels_OfSlider_SEQ_LIMITS_AND_CURR_FR( int currFram
 {
 
         ////////////////////////////////////////////////////////////////////
-        if (currFrame == -666)      currFrame = ui->mySliderOpenGL->value();
+        if (currFrame == -888)      currFrame = ui->mySliderOpenGL->value();
         ////////////////////////////////////////////////////////////////////
 
         QString strCurr;
@@ -154,7 +154,12 @@ void MainWindow::on_myButton_TRACKER_Load_Pose_RESULT_clicked()
 
         if (inputPATH.contains(RadioSequenceID_String) == false)
         {
-            std::cout << "Wrong Path for the chosen sequence, please choose another directory" << std::endl;
+            error_manager( 2 );
+            return;
+        }
+        QDir currDir = inputPATH +"/"+ QString::number( myTracker->sequence.cameraSet.currentCameraID + 1 ) + "/rgb/";
+        if ( currDir.exists() == false ) {
+            error_manager( 1 );
             return;
         }
 
@@ -166,7 +171,6 @@ void MainWindow::on_myButton_TRACKER_Load_Pose_RESULT_clicked()
 
         myTracker->sequence.videoSequence.basePathFramesForAllCameras = INPUT_BasePath_VideoFrames; // + "/" + RadioSequenceID_String + "/";
 
-        std::cout << INPUT_BasePath_VideoFrames.toStdString() << std::endl;
         myTracker->FEAT_Skinnnnn.fingerTips.basePath_Detections_ForAllCameras = INPUT_BasePath_VideoFrames; //+ QString::number( camID + 1 ) + "/detections/" + QString::number( frameNumber ).rightJustified
 
         refreshPathsALL_ForCurrentSequence();

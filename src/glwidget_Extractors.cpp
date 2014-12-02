@@ -17,9 +17,10 @@ void GLWidget::extractOneFrame_SLOT()
 
                 if(!myFileIN.isOpen())
                 {
+                    // TODO: messagebox
                         qDebug() << "- Error, unable to open file in **extractOneFrame_SLOT** for INput";
 
-                        extractOne_Count = -1; // tha afksithei amesws
+                        extractOne_Count = -1;
                 }
                 else
                 {
@@ -30,7 +31,7 @@ void GLWidget::extractOneFrame_SLOT()
                         myFileIN.close();
                 }
         }
-        else            extractOne_Count = -1; // tha afksithei amesws
+        else            extractOne_Count = -1;
 
         ///////////////////
         extractOne_Count++;
@@ -41,6 +42,7 @@ void GLWidget::extractOneFrame_SLOT()
 
         if(!myFileOUT.isOpen())
         {
+            //TODO: messagebox
             qDebug() << "- Error, unable to open file in **extractOneFrame_SLOT** for OUTput";
             return;
         }
@@ -61,6 +63,7 @@ void GLWidget::extractOneFrame_SLOT()
         QDir basedir = QDir(QApplication::applicationDirPath());
         basedir.cdUp();
         QString basePath = basedir.path();
+        //TODO: add messagebox
         std::cout << "Image rendered @ " << QString(basePath+PATH).toStdString() << std::endl;
 
 }

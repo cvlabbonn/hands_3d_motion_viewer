@@ -32,11 +32,6 @@ void TypesBackground::setType_NonGUI( QString typeIN )
     else if ( typeIN == "RGBD"  || typeIN == QString("RGBD"). toLower() )     this->RGBD  = true;
     else if ( typeIN == "DDD"   || typeIN == QString("DDD").  toLower() )     this->DDD   = true;
     else if ( typeIN == "Blank" || typeIN == QString("Blank").toLower() )     this->Blank = true;
-    else
-    {
-        qDebug() << "MALAKIA INPUT - TypesBackground::setType_NonGUI";
-    }
-
 }
 
 void TypesBackground::print()

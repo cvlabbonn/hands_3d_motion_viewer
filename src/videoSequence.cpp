@@ -29,6 +29,7 @@ VideoSequence::VideoSequence( QString basePathFramesForAllCameras_IN, QString my
 
         if( !myFile.isOpen() )
         {
+            //TODO messagebox
             qDebug() << "\n\n\n   Animation - ERROR, unable to open **" << myFileString_IndexCheat_IN << "** for IndexCheat Input \n\n\n";
             return;
         }
@@ -38,9 +39,9 @@ VideoSequence::VideoSequence( QString basePathFramesForAllCameras_IN, QString my
         QString dummyDescr;
         int     dummyValuy;
 
-        myStream >> dummyDescr;       myStream >> totalAllignedFrames;      //qDebug() << dummyDescr << totalAllignedFrames;
-        myStream >> dummyDescr;       myStream >> dummyValuy;               //qDebug() << dummyDescr << dummyValuy;
-        myStream >> dummyDescr;       myStream >> videoOffset;              //qDebug() << dummyDescr << videoOffset;
+        myStream >> dummyDescr;       myStream >> totalAllignedFrames;
+        myStream >> dummyDescr;       myStream >> dummyValuy;
+        myStream >> dummyDescr;       myStream >> videoOffset;
 
         ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
         ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -56,15 +57,13 @@ VideoSequence::VideoSequence( QString basePathFramesForAllCameras_IN, QString my
 /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
 
-void VideoSequence::loadCurrentFrame( int cameraNumber, int frameNumber ) // _xwrisOffset
+void VideoSequence::loadCurrentFrame( int cameraNumber, int frameNumber )
 {
 
         //////////////////////////////////////////////////////////////////////////////////////////
         //////////////////////////////////////////////////////////////////////////////////////////
         if (  (frameNumber < 0)  ||  (frameNumber >= totalAllignedFrames)  )
         {
-          //qDebug() << "\n\n\n   VideoSequence::loadCurrentFrame - OutOfBounds ERROR   \n\n\n";
-          //qDebug() << frameNumber << totalAllignedFrames << videoOffset;
             return;
         }
 
@@ -103,15 +102,6 @@ void VideoSequence::loadCurrentFrame( int cameraNumber, int frameNumber ) // _xw
         currFrame_RGBD_QT    = QImage( (uchar*)currFrame_RGBD_CV.data,
                                                currFrame_RGBD_CV.cols,
                                                currFrame_RGBD_CV.rows,    QImage::Format_RGB888 );
-
-
-      //if (currFrame_RGB_QT.    isNull() == true)   {   qDebug() << "\n\n\n   VideoSequence::loadCurrentFrame ERROR - currFrame_RGB_QT";       return;   }
-      //if (currFrame_RGBD_QT.   isNull() == true)   {   qDebug() << "\n\n\n   VideoSequence::loadCurrentFrame ERROR - currFrame_RGBD_QT";      return;   }
-      //if (currFrame_DDD_VIZ_QT.isNull() == true)   {   qDebug() << "\n\n\n   VideoSequence::loadCurrentFrame ERROR - currFrame_DDD_VIZ_QT";   return;   }
-
-
-      //std::cout << "VideoSequence::loadCurrentFrame  ---  " << pathhh_RGB.toStdString() << "\t\t" << basePathFramesForAllCameras.toStdString() << std::endl;
-
 
         std::string filename = pathhh_DDD_RAW.toStdString();
         cv::FileStorage fs(filename, cv::FileStorage::READ);

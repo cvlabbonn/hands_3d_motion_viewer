@@ -81,8 +81,6 @@ ModelSet::ModelSet(
 void ModelSet::compute_Centroid4D_curr() // the **models[modelID].centroid4D_curr** should be copmuted first !!!
 {
 
-    //std::cout << "compute_Centroid4D_curr - MODELSET" << std::endl;
-
     this->centroid4D_curr << 0,0,0,1;
 
     ////////////////////////////////////////////////////////////////////////////////////////////////////////
