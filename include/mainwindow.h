@@ -11,7 +11,7 @@
 #include <mymath.h>
 
 #include <fingertipSet.h>
-
+#include "sequenceselector.h"
 
 namespace Ui {
 class MainWindow;
@@ -149,7 +149,11 @@ public:
 
 
 private:
+    SequenceSelector seq_Sel;
     void on_myButton_TRACKER_Load_Pose_RESULT_clicked();
+    void sequence_selector();
+
+
 
 private slots:
 
@@ -234,6 +238,13 @@ private slots:
     void on_myButtonColor_Mesh3_clicked();
 
     void on_myButton_defaultCameraView_clicked();
+
+    void on_selectSequence_clicked();
+
+    void loadSequence(QString num);
+
+    void closeSelector();
+
 
 signals:
 

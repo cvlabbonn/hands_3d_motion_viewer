@@ -24,6 +24,10 @@ MainWindow::MainWindow(QWidget *parent) :
         connect( this,               SIGNAL(extractOneFrame_SIGNAL()),          ui->myOpenGLWidget, SLOT(extractOneFrame_SLOT())       );
         connect( this,               SIGNAL(openGL_AutoPlay_SIGNAL(bool)),      ui->myOpenGLWidget, SLOT(openGL_AutoPlay_SLOT(bool))   );
         connect( ui->myOpenGLWidget, SIGNAL(openGL_AutoPlay_UpdUi_SIGNAL()),    this,               SLOT(openGL_AutoPlay_UpdUi_SLOT()) );
+        connect(&seq_Sel,SIGNAL(setSequence(QString)),this, SLOT(loadSequence(QString)));
+        connect(&seq_Sel,SIGNAL(closeWindow()),this, SLOT(closeSelector()));
+
+        this->ui->mainWidget->setEnabled(false);
 }
 
 
@@ -99,29 +103,29 @@ void MainWindow::initialize()
         ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
         ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
-        readInputs_AND_passToOpenGL();
+//        readInputs_AND_passToOpenGL();
 
-        changedRenderCheckData();
-        hackButtonColors();
-        changeCamera( myTracker->sequence.cameraSet.currentCameraID ); // = 0
+//        changedRenderCheckData();
+//        hackButtonColors();
+//        changeCamera( myTracker->sequence.cameraSet.currentCameraID ); // = 0
 
-        myTracker->sequence.cameraSet.setModelViewFrom_RT_cameraDefault();
+//        myTracker->sequence.cameraSet.setModelViewFrom_RT_cameraDefault();
 
-        ///////////////////////////////////////
-        ui->myOpenGLWidget->cameraTranslate(0); // to update centerOfRotation vector !!!
-        ///////////////////////////////////////
+//        ///////////////////////////////////////
+//        ui->myOpenGLWidget->cameraTranslate(0); // to update centerOfRotation vector !!!
+//        ///////////////////////////////////////
 
-        //////////////////////////////////
-        on_myCheckBox_MESH_FILL_clicked(); // regulate mesh alpha
-        //////////////////////////////////
+//        //////////////////////////////////
+//        on_myCheckBox_MESH_FILL_clicked(); // regulate mesh alpha
+//        //////////////////////////////////
 
-        ui->myLabel_transMesh->               setVisible( false );
-        ui->myLabel_transSkeleton->  setVisible( false );
-        ui->myLabel_transLocalCoord->setVisible( false );
+//        ui->myLabel_transMesh->               setVisible( false );
+//        ui->myLabel_transSkeleton->  setVisible( false );
+//        ui->myLabel_transLocalCoord->setVisible( false );
 
-        BackGroundButtons_EnableDisable( false );
+//        BackGroundButtons_EnableDisable( false );
 
-        ui->myCheck_FingertipVertices_Centroid->setEnabled( ui->myCheck_FingertipVertices->isChecked() );
+//        ui->myCheck_FingertipVertices_Centroid->setEnabled( ui->myCheck_FingertipVertices->isChecked() );
 
 }
 
@@ -168,4 +172,51 @@ void MainWindow::on_myButton_defaultCameraView_clicked()
 void MainWindow::openGL_AutoPlay_UpdUi_SLOT()
 {
         changed_myTracker_Frames_INI_FIN( "auto" );
+}
+
+void MainWindow::loadSequence(QString num)
+{
+    this->setEnabled(true);
+    this->ui->mainWidget->setEnabled(true);
+
+    define_SEQ_numberStr(num);
+    readInputs_AND_passToOpenGL();
+
+    changedRenderCheckData();
+    hackButtonColors();
+    changeCamera( myTracker->sequence.cameraSet.currentCameraID );
+
+    myTracker->sequence.cameraSet.setModelViewFrom_RT_cameraDefault();
+
+    ///////////////////////////////////////
+    ui->myOpenGLWidget->cameraTranslate(0); // to update centerOfRotation vector !!!
+    ///////////////////////////////////////
+
+    //////////////////////////////////
+    on_myCheckBox_MESH_FILL_clicked(); // regulate mesh alpha
+    //////////////////////////////////
+
+    ui->myLabel_transMesh->               setVisible( false );
+    ui->myLabel_transSkeleton->  setVisible( false );
+    ui->myLabel_transLocalCoord->setVisible( false );
+
+    BackGroundButtons_EnableDisable( false );
+
+    ui->myCheck_FingertipVertices_Centroid->setEnabled( ui->myCheck_FingertipVertices->isChecked() );
+
+    //////////////////////////////////////////////
+    ui->myOpenGLWidget->trackerInitialized = true;
+    //////////////////////////////////////////////
+
+}
+
+void MainWindow::on_selectSequence_clicked()
+{
+    sequence_selector();
+}
+
+void MainWindow::closeSelector()
+{
+    this->setEnabled(true);
+    this->ui->mainWidget->setEnabled(true);
 }

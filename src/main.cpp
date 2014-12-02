@@ -21,7 +21,7 @@ int main(int argc, char *argv[])
             ////////////////////////////////////////////////////////////////////////
 
             MainWindow www;
-            www.define_SEQ_numberStr( inputArguments[1] /*"01"*/ );
+          //www.define_SEQ_numberStr( inputArguments[1] /*"01"*/ );
             www.initialize();
             www.show();
 

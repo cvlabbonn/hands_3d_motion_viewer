@@ -15,6 +15,10 @@ void GLWidget::wheelEvent(QWheelEvent *myEvent)     {     cameraTranslate( myEve
 
 void GLWidget::mouseMoveEvent(QMouseEvent *myEvent)
 {
+        ///////////////////////////////////////////
+        if (trackerInitialized == false)    return;
+        ///////////////////////////////////////////
+
         int mousePos_X = myEvent->pos().x();
         int mousePos_Y = myEvent->pos().y();
         if (mousePos_X < 0)                                              mousePos_X=0;

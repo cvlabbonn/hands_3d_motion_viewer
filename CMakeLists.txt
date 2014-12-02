@@ -59,11 +59,13 @@ file(GLOB VIEWER_INCLUDES include/*.h)
 SET(QT_HEADERS
     include/mainwindow.h
     include/glwidget.h
+    include/sequenceselector.h
     )
 
 #set QT forms
 SET(QT_FORMS
     ui/mainwindow.ui
+    ui/sequenceselector.ui
 )
 
 # create moc for QT

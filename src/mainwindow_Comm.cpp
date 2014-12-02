@@ -65,6 +65,11 @@ void MainWindow::readInputs_AND_passToOpenGL()
       //print_MODELS_INFO_TXT();
         ////////////////////////////////////////////////////////
 
+        if (trackerCreatedOnce){
+            trackerCreatedOnce = false;
+            ui->myOpenGLWidget->trackerInitialized = false;
+            delete myTracker;
+        }
 
         myTracker = new Tracker(
                                     //CAMERASET

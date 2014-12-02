@@ -58,6 +58,10 @@ GLWidget::GLWidget(QWidget *parent) :
 
         Skip_Video_forOneCycle = false;
 
+        ///////////////////////////
+        trackerInitialized = false;
+        ///////////////////////////
+
 }
 
 
@@ -84,7 +88,7 @@ void GLWidget::initializeGL()
 
 void GLWidget::resizeGL(int w, int h)
 {
-        glViewport( 0, 0, tracker->sequence.videoSequence.frameWidth, tracker->sequence.videoSequence.frameHeight);
+        glViewport( 0, 0, 640/*tracker->sequence.videoSequence.frameWidth*/, 480/*tracker->sequence.videoSequence.frameHeight*/);
 }
 
 
@@ -102,12 +106,14 @@ void GLWidget::resizeGL(int w, int h)
 void GLWidget::paintGL()
 {
 
-    try
+    glClear(GL_COLOR_BUFFER_BIT | GL_ACCUM_BUFFER_BIT | GL_STENCIL_BUFFER_BIT);
+
+    glClearColor(0.0,0.0,0.0,1);   // BackGround QGLWidget !!!
+
+    ///////////////////////
+    if (trackerInitialized)
+    ///////////////////////
     {
-
-                glClear(GL_COLOR_BUFFER_BIT | GL_ACCUM_BUFFER_BIT | GL_STENCIL_BUFFER_BIT);
-
-                glClearColor(0.0,0.0,0.0,1);   // BackGround QGLWidget !!!
 
                 if (tracker->typesBackground.Blank==false && Skip_Video_forOneCycle==false)
                 {
@@ -139,21 +145,15 @@ void GLWidget::paintGL()
 
                 if (autoPlay == true)
                 {
-                        tracker->incrFrameNumber();
+                    tracker->incrFrameNumber();
 
-                        emit openGL_AutoPlay_UpdUi_SIGNAL();
+                    emit openGL_AutoPlay_UpdUi_SIGNAL();
                 }
 
-
-                ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-                ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-                swapBuffers();    glFlush();         //   !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!   \m/
-                ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-                ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-
     }
-    catch(...)
-    {
-    }
+
+    ////////////////////////////
+    swapBuffers();    //glFlush();
+    ////////////////////////////
 
 }
