@@ -11,7 +11,7 @@
    </rect>
   </property>
   <property name="windowTitle">
-   <string>Sequence Selector</string>
+   <string>Sequence Downloader</string>
   </property>
   <widget class="QPushButton" name="loadSequenceButton">
    <property name="geometry">

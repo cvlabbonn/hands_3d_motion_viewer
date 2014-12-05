@@ -32,7 +32,7 @@
    <enum>Qt::WheelFocus</enum>
   </property>
   <property name="windowTitle">
-   <string>RGBD_HAND_TRACKER</string>
+   <string>Hands 3d Motion Viewer</string>
   </property>
   <widget class="QWidget" name="centralWidget">
    <property name="focusPolicy">
@@ -336,7 +336,7 @@
        <x>670</x>
        <y>510</y>
        <width>541</width>
-       <height>31</height>
+       <height>80</height>
       </rect>
      </property>
      <layout class="QGridLayout" name="gridLayout">
@@ -1565,9 +1565,9 @@
      <property name="geometry">
       <rect>
        <x>1020</x>
-       <y>-1</y>
+       <y>0</y>
        <width>211</width>
-       <height>181</height>
+       <height>171</height>
       </rect>
      </property>
      <property name="frameShape">
@@ -1580,7 +1580,7 @@
       <property name="geometry">
        <rect>
         <x>20</x>
-        <y>120</y>
+        <y>100</y>
         <width>171</width>
         <height>62</height>
        </rect>
@@ -1624,9 +1624,9 @@
       <property name="geometry">
        <rect>
         <x>20</x>
-        <y>25</y>
+        <y>20</y>
         <width>171</width>
-        <height>88</height>
+        <height>71</height>
        </rect>
       </property>
       <layout class="QVBoxLayout" name="verticalLayout_4">
@@ -1773,48 +1773,11 @@
             <string>Go to first frame</string>
            </property>
            <property name="text">
-            <string>restart</string>
+            <string>set 0</string>
            </property>
           </widget>
          </item>
         </layout>
-       </item>
-       <item>
-        <widget class="QCheckBox" name="myCheck_OpenGL_AutoPlay">
-         <property name="enabled">
-          <bool>true</bool>
-         </property>
-         <property name="sizePolicy">
-          <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
-           <horstretch>0</horstretch>
-           <verstretch>0</verstretch>
-          </sizepolicy>
-         </property>
-         <property name="minimumSize">
-          <size>
-           <width>90</width>
-           <height>15</height>
-          </size>
-         </property>
-         <property name="maximumSize">
-          <size>
-           <width>200</width>
-           <height>15</height>
-          </size>
-         </property>
-         <property name="font">
-          <font>
-           <weight>75</weight>
-           <bold>true</bold>
-          </font>
-         </property>
-         <property name="toolTip">
-          <string>Play all frames in sequence</string>
-         </property>
-         <property name="text">
-          <string>AutoPlay Sequence</string>
-         </property>
-        </widget>
        </item>
       </layout>
      </widget>
@@ -1838,11 +1801,74 @@
       </property>
      </widget>
     </widget>
+    <widget class="QPushButton" name="downloadSequenceBackgroundFrames">
+     <property name="geometry">
+      <rect>
+       <x>990</x>
+       <y>480</y>
+       <width>221</width>
+       <height>27</height>
+      </rect>
+     </property>
+     <property name="font">
+      <font>
+       <weight>50</weight>
+       <italic>false</italic>
+       <bold>false</bold>
+      </font>
+     </property>
+     <property name="toolTip">
+      <string>Select the sequence to show</string>
+     </property>
+     <property name="text">
+      <string>Download Background Frames</string>
+     </property>
+    </widget>
+    <widget class="QToolButton" name="myButton_OpenGL_AutoPlay_START">
+     <property name="geometry">
+      <rect>
+       <x>420</x>
+       <y>520</y>
+       <width>41</width>
+       <height>25</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>Play</string>
+     </property>
+     <property name="icon">
+      <iconset>
+       <normaloff>../img/play.png</normaloff>../img/play.png</iconset>
+     </property>
+    </widget>
+    <widget class="QToolButton" name="myButton_OpenGL_AutoPlay_STOPP">
+     <property name="geometry">
+      <rect>
+       <x>460</x>
+       <y>520</y>
+       <width>41</width>
+       <height>25</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>Stop</string>
+     </property>
+     <property name="icon">
+      <iconset>
+       <normaloff>../img/stop.png</normaloff>../img/stop.png</iconset>
+     </property>
+     <property name="iconSize">
+      <size>
+       <width>12</width>
+       <height>12</height>
+      </size>
+     </property>
+    </widget>
    </widget>
    <widget class="QPushButton" name="selectSequence">
     <property name="geometry">
      <rect>
-      <x>160</x>
+      <x>260</x>
       <y>530</y>
       <width>131</width>
       <height>27</height>
@@ -1860,29 +1886,6 @@
     </property>
     <property name="text">
      <string>Select Sequence</string>
-    </property>
-   </widget>
-   <widget class="QPushButton" name="downloadSequenceBackgroundFrames">
-    <property name="geometry">
-     <rect>
-      <x>300</x>
-      <y>530</y>
-      <width>291</width>
-      <height>27</height>
-     </rect>
-    </property>
-    <property name="font">
-     <font>
-      <weight>75</weight>
-      <italic>false</italic>
-      <bold>true</bold>
-     </font>
-    </property>
-    <property name="toolTip">
-     <string>Select the sequence to show</string>
-    </property>
-    <property name="text">
-     <string>Download Sequence Background Frames</string>
     </property>
    </widget>
    <zorder>mainWidget</zorder>
@@ -1910,7 +1913,6 @@
    <zorder>sequenceRadio_20</zorder>
    <zorder>sequenceRadio_21</zorder>
    <zorder>selectSequence</zorder>
-   <zorder>downloadSequenceBackgroundFrames</zorder>
   </widget>
   <widget class="QMenuBar" name="menuBar">
    <property name="geometry">

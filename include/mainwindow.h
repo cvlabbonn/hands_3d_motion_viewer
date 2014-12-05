@@ -205,8 +205,6 @@ private slots:
 
     void on_myButton_Reset_clicked();
 
-    void on_myCheck_OpenGL_AutoPlay_clicked();
-
     void on_myCheck_RenderLeftRight_BoneLCS_clicked();
 
     void on_myCheck_RenderObject_1_clicked();
@@ -252,6 +250,10 @@ private slots:
     void closeSelector();
 
     void on_downloadSequenceBackgroundFrames_clicked();
+
+    void on_myButton_OpenGL_AutoPlay_START_clicked();
+
+    void on_myButton_OpenGL_AutoPlay_STOPP_clicked();
 
 signals:
 

@@ -179,9 +179,9 @@ void MainWindow::loadSequence(QString num)
 {
     this->setEnabled(true);
     this->ui->mainWidget->setEnabled(true);
-    this->ui->selectSequence->setEnabled(false);
-    this->ui->downloadSequenceBackgroundFrames->setEnabled(false);
-
+    this->ui->selectSequence->setEnabled(true);
+    this->ui->downloadSequenceBackgroundFrames->setEnabled(true);
+    this->setWindowTitle("Hands 3d Motion Viewer - Sequence ID " + num);
     define_SEQ_numberStr(num);
     readInputs_AND_passToOpenGL();
 
@@ -232,5 +232,7 @@ void MainWindow::closeSelector()
     this->seq_Down.hide();
     this->seq_Sel.hide();
 }
+
+
 
 
