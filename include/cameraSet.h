@@ -7,7 +7,7 @@
 #include <iostream>
 
 #include <mymath.h>
-
+#include "error_manager.h"
 
 struct OpenGL_Stuff
 {

@@ -93,8 +93,7 @@ void Animation::readCheatIndexTXT( QString myFileString_IndexCheat_IN )
 
         if( !myFile.isOpen() )
         {
-            //TODO: message box
-            qDebug() << "\n\n\n   Animation::readCheatIndexTXT - ERROR, unable to open **" << myFileString_IndexCheat_IN << "** for IndexCheat Input \n\n\n";
+            ErrorManager::error(3, myFileString_IndexCheat_IN);
             return;
         }
 

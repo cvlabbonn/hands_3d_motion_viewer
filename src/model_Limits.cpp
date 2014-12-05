@@ -23,8 +23,7 @@ void Model::readLimits( QString myFileString_Limits )
 
         if( !myFile.isOpen() )
         {
-            //TODO: Messagebox
-            qDebug() << "Model::readLimits - ERROR, unable to open **" << myFileString_Limits << "** for Limits Input";
+            ErrorManager::error(3, myFileString_Limits);
             return;
         }
 

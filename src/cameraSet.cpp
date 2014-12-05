@@ -33,8 +33,7 @@ void CameraSet::setupCameras( QString INPUT_FINAL_PATH_Cameras )
 
         if( !myFile.isOpen() )
         {
-            //TODO:: message box
-            qDebug() << "CameraSet::setupCameras - ERROR, unable to open **" << INPUT_FINAL_PATH_Cameras << "** for CameraConf Input";
+            ErrorManager::error(3, INPUT_FINAL_PATH_Cameras);
             return;
         }
 

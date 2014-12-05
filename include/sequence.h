@@ -5,6 +5,7 @@
 #include <cameraSet.h>
 #include <animation.h>
 #include <videoSequence.h>
+#include "error_manager.h"
 
 
 class Sequence

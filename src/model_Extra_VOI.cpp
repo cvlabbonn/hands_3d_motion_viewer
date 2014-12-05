@@ -22,8 +22,7 @@ void Model::create_VerticesOfInterest( int voiTYPE )
 
         if( !myFile.isOpen() )
         {
-            //TODO: messagebox
-            qDebug() << "Model::create_VerticesOfInterest - ERROR, unable to open **" << fileString_VOI << "** for Limits Input";
+            ErrorManager::error(3, fileString_VOI);
             return;
         }
 

@@ -9,7 +9,11 @@ void GLWidget::extractOneFrame_SLOT()
 
         QImageWriter imagefile;
 
-        QFile myFileIN( "Capture/SingleFrames/number.txt" );
+        QDir basedir = QDir(QApplication::applicationDirPath());
+        basedir.cdUp();
+
+        QString         filename = basedir.path() + "/Capture/SingleFrames/number.txt";
+        QFile myFileIN( filename );
 
         if (myFileIN.exists() == true)
         {
@@ -17,9 +21,7 @@ void GLWidget::extractOneFrame_SLOT()
 
                 if(!myFileIN.isOpen())
                 {
-                    // TODO: messagebox
-                        qDebug() << "- Error, unable to open file in **extractOneFrame_SLOT** for INput";
-
+                        ErrorManager::error(3, filename);
                         extractOne_Count = -1;
                 }
                 else
@@ -36,14 +38,12 @@ void GLWidget::extractOneFrame_SLOT()
         ///////////////////
         extractOne_Count++;
         ///////////////////
-
-        QFile myFileOUT( "Capture/SingleFrames/number.txt" );
+        QFile myFileOUT(  filename );
         myFileOUT.open(QIODevice::WriteOnly);
 
         if(!myFileOUT.isOpen())
         {
-            //TODO: messagebox
-            qDebug() << "- Error, unable to open file in **extractOneFrame_SLOT** for OUTput";
+            ErrorManager::error(4, filename);
             return;
         }
 
@@ -53,17 +53,21 @@ void GLWidget::extractOneFrame_SLOT()
 
         myFileOUT.close();
 
-        QString PATH = "Capture/SingleFrames/" + QString::number( extractOne_Count ).rightJustified(5,'0',false) + ".jpg";
+        QString PATH = basedir.path() + "/Capture/SingleFrames/" + QString::number( extractOne_Count ).rightJustified(5,'0',false) + ".jpg";
 
         imagefile.setFileName( PATH );
         imagefile.setFormat("jpg");
         imagefile.setQuality( 100 );
-        imagefile.write(myCapturedFrame);
+        bool result = imagefile.write(myCapturedFrame);
 
-        QDir basedir = QDir(QApplication::applicationDirPath());
-        basedir.cdUp();
-        QString basePath = basedir.path();
-        //TODO: add messagebox
-        std::cout << "Image rendered @ " << QString(basePath+PATH).toStdString() << std::endl;
+        if(!result)
+        {
+            ErrorManager::error(5, filename);
+            return;
+        } else {
+
+        QFileInfo file_path = QFileInfo(PATH);
+        ErrorManager::error(6, file_path.fileName());
+        }
 
 }

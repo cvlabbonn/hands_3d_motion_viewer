@@ -154,12 +154,12 @@ void MainWindow::on_myButton_TRACKER_Load_Pose_RESULT_clicked()
 
         if (inputPATH.contains(RadioSequenceID_String) == false)
         {
-            error_manager( 2 );
+            ErrorManager::error( 2, inputPATH );
             return;
         }
         QDir currDir = inputPATH +"/"+ QString::number( myTracker->sequence.cameraSet.currentCameraID + 1 ) + "/rgb/";
         if ( currDir.exists() == false ) {
-            error_manager( 1 );
+            ErrorManager::error( 1,  inputPATH);
             return;
         }
 
@@ -253,7 +253,7 @@ void MainWindow::on_myButton_TRACKER_Load_Motion_File_clicked()
     emit openGL_AutoPlay_SIGNAL( false);
     ui->myCheck_OpenGL_AutoPlay->setChecked(false);
     QString path = ui->myTextEdit_TRACKER_Load_Pose_RESULT->toPlainText();
-    QString folder = QFileDialog::getExistingDirectory( this, tr( "Select Folder" ), path);
+    QString folder = QFileDialog::getExistingDirectory( this, tr( "Choose the root directory for the sequence background frames" ), path);
 
     if ( folder != "" ) {
         ui->myTextEdit_TRACKER_Load_Pose_RESULT->setPlainText( folder );
@@ -293,5 +293,12 @@ void MainWindow::BackGroundButtons_EnableDisable(    bool  state )
 void MainWindow::sequence_selector(){
     seq_Sel.show();
     this->setEnabled(false);
-    this->ui->selectSequence->setEnabled(true);
+    this->ui->selectSequence->setEnabled(false);
+    this->ui->downloadSequenceBackgroundFrames->setEnabled(false);
+}
+void MainWindow::sequence_downloader(){
+    seq_Down.show();
+    this->setEnabled(false);
+    this->ui->selectSequence->setEnabled(false);
+    this->ui->downloadSequenceBackgroundFrames->setEnabled(false);
 }

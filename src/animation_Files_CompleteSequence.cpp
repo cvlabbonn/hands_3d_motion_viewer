@@ -140,8 +140,7 @@ void Animation::readFromTXT( QString shouldPrint )
                         myFileREAD.open(QIODevice::ReadOnly);
 
                         if(!myFileREAD.isOpen()){
-                            //TODO: message box
-                            qDebug() << "Animation::readFromTxt - Error, unable to open **" << filename << "** for input";
+                            ErrorManager::error(3, filename);
                             return;
                         }
 

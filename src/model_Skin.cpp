@@ -14,8 +14,7 @@ void Model::readSkin_TXT( QString myFileString_Skin )
 
         if( !myFile.isOpen() )
         {
-            //TODO:mesagebox
-            qDebug() << "Model::readSkin_Txt() - ERROR, unable to open **" << myFileString_Skin << "** for Skin Input";
+            ErrorManager::error(3, myFileString_Skin);
             return;
         }
 

@@ -8,6 +8,7 @@
 #include <QFile>
 
 #include <opencv2/opencv.hpp>
+#include "error_manager.h"
 
 
 class VideoSequence

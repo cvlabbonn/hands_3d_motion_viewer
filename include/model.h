@@ -16,6 +16,8 @@
 #include <eigen3/Eigen/Core>
 #include <eigen3/Eigen/Geometry>
 
+#include "error_manager.h"
+
 
 struct BoneStruct
 {

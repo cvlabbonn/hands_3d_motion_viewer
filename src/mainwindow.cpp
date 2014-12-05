@@ -26,6 +26,7 @@ MainWindow::MainWindow(QWidget *parent) :
         connect( ui->myOpenGLWidget, SIGNAL(openGL_AutoPlay_UpdUi_SIGNAL()),    this,               SLOT(openGL_AutoPlay_UpdUi_SLOT()) );
         connect(&seq_Sel,SIGNAL(setSequence(QString)),this, SLOT(loadSequence(QString)));
         connect(&seq_Sel,SIGNAL(closeWindow()),this, SLOT(closeSelector()));
+        connect(&seq_Down,SIGNAL(closeWindow()),this, SLOT(closeSelector()));
 
         this->ui->mainWidget->setEnabled(false);
 }
@@ -178,6 +179,8 @@ void MainWindow::loadSequence(QString num)
 {
     this->setEnabled(true);
     this->ui->mainWidget->setEnabled(true);
+    this->ui->selectSequence->setEnabled(false);
+    this->ui->downloadSequenceBackgroundFrames->setEnabled(false);
 
     define_SEQ_numberStr(num);
     readInputs_AND_passToOpenGL();
@@ -215,8 +218,19 @@ void MainWindow::on_selectSequence_clicked()
     sequence_selector();
 }
 
+void MainWindow::on_downloadSequenceBackgroundFrames_clicked()
+{
+    sequence_downloader();
+}
+
 void MainWindow::closeSelector()
 {
     this->setEnabled(true);
+    this->ui->selectSequence->setEnabled(true);
+    this->ui->downloadSequenceBackgroundFrames->setEnabled(true);
     this->ui->mainWidget->setEnabled(true);
+    this->seq_Down.hide();
+    this->seq_Sel.hide();
 }
+
+

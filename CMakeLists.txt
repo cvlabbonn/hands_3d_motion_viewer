@@ -60,12 +60,14 @@ SET(QT_HEADERS
     include/mainwindow.h
     include/glwidget.h
     include/sequenceselector.h
+    include/sequencedownloader.h
     )
 
 #set QT forms
 SET(QT_FORMS
     ui/mainwindow.ui
     ui/sequenceselector.ui
+    ui/sequencedownloader.ui
 )
 
 # create moc for QT

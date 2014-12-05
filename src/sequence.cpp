@@ -85,8 +85,7 @@ Sequence::Sequence(
 
         if( !myFile.isOpen() )
         {
-            //TODO:message box
-            qDebug() << "\n\n\n   Sequence::Sequence - ERROR, unable to open **" << INPUT_FINAL_PATH_IndexCheat_INNN << "** for IndexCheat Input \n\n\n";
+            ErrorManager::error(3, INPUT_FINAL_PATH_IndexCheat_INNN);
             return;
         }
 

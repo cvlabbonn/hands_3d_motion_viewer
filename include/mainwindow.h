@@ -11,8 +11,11 @@
 
 #include <mymath.h>
 
+#include "error_manager.h"
+
 #include <fingertipSet.h>
 #include "sequenceselector.h"
+#include "sequencedownloader.h"
 
 namespace Ui {
 class MainWindow;
@@ -150,10 +153,11 @@ public:
 
 
 private:
-    SequenceSelector seq_Sel;
+    SequenceSelector   seq_Sel;
+    SequenceDownloader seq_Down;
     void on_myButton_TRACKER_Load_Pose_RESULT_clicked();
     void sequence_selector();
-    void error_manager( int error);
+    void sequence_downloader();
 
 
 
@@ -247,6 +251,7 @@ private slots:
 
     void closeSelector();
 
+    void on_downloadSequenceBackgroundFrames_clicked();
 
 signals:
 

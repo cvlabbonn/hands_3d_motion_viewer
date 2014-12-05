@@ -29,8 +29,7 @@ VideoSequence::VideoSequence( QString basePathFramesForAllCameras_IN, QString my
 
         if( !myFile.isOpen() )
         {
-            //TODO messagebox
-            qDebug() << "\n\n\n   Animation - ERROR, unable to open **" << myFileString_IndexCheat_IN << "** for IndexCheat Input \n\n\n";
+            ErrorManager::error(3, myFileString_IndexCheat_IN);
             return;
         }
 

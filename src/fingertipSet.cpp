@@ -23,8 +23,7 @@ FingertipSet::FingertipSet( QString basePath_Detections_ForAllCameras_IN, QStrin
 
         if( !myFile.isOpen() )
         {
-            //TODO: messagebox
-            qDebug() << "\n\n\n   FingertipSet::FingertipSet - ERROR, unable to open **" << myFileString_IndexCheat_IN << "**  \n\n\n";
+            ErrorManager::error(3, myFileString_IndexCheat_IN);
             return;
         }
 
@@ -59,8 +58,7 @@ void FingertipSet::read_Curr_Detections_fromFile( int camID, int frameNumber )
         //////////////////////////////////////////////////////////////////////////////////////////
         if (  (frameNumber < 0)  ||  (frameNumber >= totalAllignedFrames)  )
         {
-            //TODO: message box
-            qDebug() << "\n\n\n   FingertipSet::read_Curr_Detections_fromFile   \n\n\n";
+            ErrorManager::error(7);
             return;
         }
 
@@ -88,8 +86,7 @@ void FingertipSet::read_Curr_Detections_fromFile( int camID, int frameNumber )
 
         if( !myFile.isOpen() )
         {
-            //TODO: message box
-            qDebug() << "FingertipSet::read_Curr_Detections_fromFile - ERROR, unable to open **" << myFileString_DETECTION << "** for Detections Input";
+            ErrorManager::error(3, myFileString_DETECTION);
             return;
         }
 

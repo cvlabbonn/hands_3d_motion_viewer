@@ -11,8 +11,7 @@ void Model::readSkeleton( QString myFileString_Skeleton )
 
         if( !myFile.isOpen() )
         {
-            //TODO::Messagebox
-            qDebug() << "readSkeleton - ERROR, unable to open **" << myFileString_Skeleton << "** for Skeleton Input";
+            ErrorManager::error(3, myFileString_Skeleton);
             return;
         }
 
