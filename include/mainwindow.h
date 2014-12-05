@@ -247,7 +247,7 @@ private slots:
 
     void loadSequence(QString num);
 
-    void closeSelector();
+    void closeSelector( bool );
 
     void on_downloadSequenceBackgroundFrames_clicked();
 

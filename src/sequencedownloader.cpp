@@ -39,9 +39,9 @@ void SequenceDownloader::on_loadSequenceButton_clicked()
     else if (ui->sequenceRadio_20->isChecked())     sequence = QUrl("http://files.is.tue.mpg.de/dtzionas/Hand-Object-Capture/Dataset/Hand_Object___All_Files_No_PCL_ONI/20.zip");
     else if (ui->sequenceRadio_21->isChecked())     sequence = QUrl("http://files.is.tue.mpg.de/dtzionas/Hand-Object-Capture/Dataset/Hand_Object___All_Files_No_PCL_ONI/21.zip");
     QDesktopServices::openUrl (sequence );
-    emit closeWindow();
+    emit closeWindow( true );
 }
 
 void SequenceDownloader::closeEvent(QCloseEvent *){
-    emit closeWindow();
+    emit closeWindow(false);
 }

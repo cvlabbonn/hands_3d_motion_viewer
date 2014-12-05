@@ -42,5 +42,5 @@ void SequenceSelector::on_loadSequenceButton_clicked()
 }
 
 void SequenceSelector::closeEvent(QCloseEvent *){
-    emit closeWindow();
+    emit closeWindow( false );
 }

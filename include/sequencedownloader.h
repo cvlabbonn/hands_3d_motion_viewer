@@ -22,7 +22,7 @@ private:
     void closeEvent(QCloseEvent *);
 
 signals:
-    void closeWindow();
+    void closeWindow( bool );
 private slots:
     void on_loadSequenceButton_clicked();
 };

@@ -21,12 +21,14 @@ MainWindow::MainWindow(QWidget *parent) :
 {
         ui->setupUi(this);
 
+        RadioSequenceID_String = "-888";
+
         connect( this,               SIGNAL(extractOneFrame_SIGNAL()),          ui->myOpenGLWidget, SLOT(extractOneFrame_SLOT())       );
         connect( this,               SIGNAL(openGL_AutoPlay_SIGNAL(bool)),      ui->myOpenGLWidget, SLOT(openGL_AutoPlay_SLOT(bool))   );
         connect( ui->myOpenGLWidget, SIGNAL(openGL_AutoPlay_UpdUi_SIGNAL()),    this,               SLOT(openGL_AutoPlay_UpdUi_SLOT()) );
         connect(&seq_Sel,SIGNAL(setSequence(QString)),this, SLOT(loadSequence(QString)));
-        connect(&seq_Sel,SIGNAL(closeWindow()),this, SLOT(closeSelector()));
-        connect(&seq_Down,SIGNAL(closeWindow()),this, SLOT(closeSelector()));
+        connect(&seq_Sel,SIGNAL(closeWindow(bool)),this, SLOT(closeSelector(bool)));
+        connect(&seq_Down,SIGNAL(closeWindow(bool)),this, SLOT(closeSelector(bool)));
 
         this->ui->mainWidget->setEnabled(false);
 }
@@ -223,12 +225,16 @@ void MainWindow::on_downloadSequenceBackgroundFrames_clicked()
     sequence_downloader();
 }
 
-void MainWindow::closeSelector()
+void MainWindow::closeSelector(bool enable)
 {
     this->setEnabled(true);
+    ui->mainWidget->setEnabled(false);
+    if (enable)
+        ui->mainWidget->setEnabled(true);
+    else if (RadioSequenceID_String != "-888")
+        ui->mainWidget->setEnabled(true);
     this->ui->selectSequence->setEnabled(true);
     this->ui->downloadSequenceBackgroundFrames->setEnabled(true);
-    this->ui->mainWidget->setEnabled(true);
     this->seq_Down.hide();
     this->seq_Sel.hide();
 }
