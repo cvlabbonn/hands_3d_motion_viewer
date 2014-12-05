@@ -20,9 +20,9 @@ Run
 ----
 
     cd bin
-    ./3d_viewer xx
-
-Where xx can be 01 ... 21, this will change the data set to be loaded and here is a list of what each data set contains.
+    ./3d_viewer
+    
+In the gui window, click in the "load sequence" button and select one of the following sequences:
 
 - 01 - Walking
 - 02 - Crossing
@@ -45,3 +45,19 @@ Where xx can be 01 ... 21, this will change the data set to be loaded and here i
 - 19 - Moving a Ball with one hand and  occlusion of a manipulating finger
 - 20 - Moving a Cube with one hand
 - 21 - Moving a Cube with one hand and  occlusion of a manipulating finger
+
+(*) Only for comparison with the FORTH tracker.
+
+Then you can load the background images by clicking in the "find path" button and selecting the folder of the dataset. For example, for dataset 03 you will have to select the root folder that has the folder "1" under it.
+
+    |-03 <-- folder to choose
+      |- 1 
+         |- rgb
+         |- rgbd
+         |- joints_2D_GT
+         |- depth_viz
+         |- annotations
+         |- detections
+         |- pcl
+         
+
