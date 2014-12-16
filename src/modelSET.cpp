@@ -152,13 +152,20 @@ void ModelSet::create_VerticesOfInterest( int voiTYPE )
             //////////////////////////////////////////////////////
             if (models[modelID].has_OnlySkin == false)   continue;
             //////////////////////////////////////////////////////
-
-            QString pathVOIs = QString("VOIs/VOIs_Model_"+QString::number(modelID)+".txt");
+            QDir basedir = QDir(QApplication::applicationDirPath());
+            basedir.cdUp();
+            QString basePath = basedir.path();
+            QString pathVOIs = basePath + QString("/VOIs/VOIs_Model_"+QString::number(modelID)+".txt");
 
                            ///////////////
             std::ifstream  VOIs_FILE;/////
                            VOIs_FILE.open( pathVOIs.toStdString().data() );
                            ///////////////
+                           if( !VOIs_FILE.is_open() )
+                           {
+                               ErrorManager::error(3, pathVOIs);
+                               return;
+                           }
 
                            for (int fingID=0; fingID<models[modelID].VerticesOfInterest_Viz_Indices.size(); fingID++)
                            {

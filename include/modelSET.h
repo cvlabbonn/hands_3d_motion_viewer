@@ -3,6 +3,7 @@
 
 
 #include <model.h>
+#include <error_manager.h>
 
 
 class ModelSet

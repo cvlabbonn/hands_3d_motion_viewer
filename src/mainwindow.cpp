@@ -20,6 +20,14 @@ MainWindow::MainWindow(QWidget *parent) :
     ui(new Ui::MainWindow)
 {
         ui->setupUi(this);
+        // load the play and stop icons
+        QDir basedir = QDir(QApplication::applicationDirPath());
+        basedir.cdUp();
+        QString basePath = basedir.path();
+        QIcon play(basePath+"/img/play.png");
+        QIcon stop(basePath+"/img/stop.png");
+        ui->myButton_OpenGL_AutoPlay_START->setIcon(play);
+        ui->myButton_OpenGL_AutoPlay_STOPP->setIcon(stop);
 
         RadioSequenceID_String = "-888";
 

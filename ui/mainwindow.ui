@@ -68,7 +68,7 @@
     <property name="geometry">
      <rect>
       <x>0</x>
-      <y>10</y>
+      <y>0</y>
       <width>1231</width>
       <height>611</height>
      </rect>
@@ -327,53 +327,6 @@
          </size>
         </property>
        </spacer>
-      </item>
-     </layout>
-    </widget>
-    <widget class="QWidget" name="layoutWidget">
-     <property name="geometry">
-      <rect>
-       <x>670</x>
-       <y>510</y>
-       <width>541</width>
-       <height>80</height>
-      </rect>
-     </property>
-     <layout class="QGridLayout" name="gridLayout">
-      <item row="2" column="0">
-       <widget class="QPlainTextEdit" name="myTextEdit_TRACKER_Load_Pose_RESULT">
-        <property name="enabled">
-         <bool>true</bool>
-        </property>
-        <property name="toolTip">
-         <string>Choose the path of the data to select a different background</string>
-        </property>
-        <property name="readOnly">
-         <bool>true</bool>
-        </property>
-        <property name="plainText">
-         <string/>
-        </property>
-       </widget>
-      </item>
-      <item row="2" column="1">
-       <widget class="QPushButton" name="myButton_TRACKER_Load_Motion_File">
-        <property name="enabled">
-         <bool>true</bool>
-        </property>
-        <property name="minimumSize">
-         <size>
-          <width>0</width>
-          <height>25</height>
-         </size>
-        </property>
-        <property name="toolTip">
-         <string>Choose the folder</string>
-        </property>
-        <property name="text">
-         <string>Find Path</string>
-        </property>
-       </widget>
       </item>
      </layout>
     </widget>
@@ -765,7 +718,7 @@
        <x>670</x>
        <y>460</y>
        <width>301</width>
-       <height>51</height>
+       <height>21</height>
       </rect>
      </property>
      <property name="minimumSize">
@@ -783,121 +736,7 @@
      <property name="title">
       <string>Background</string>
      </property>
-     <widget class="QWidget" name="horizontalLayoutWidget">
-      <property name="geometry">
-       <rect>
-        <x>0</x>
-        <y>20</y>
-        <width>297</width>
-        <height>31</height>
-       </rect>
-      </property>
-      <layout class="QHBoxLayout" name="horizontalLayout">
-       <item>
-        <widget class="QRadioButton" name="myRadioButton_Tracker_Background_RGBD">
-         <property name="minimumSize">
-          <size>
-           <width>0</width>
-           <height>15</height>
-          </size>
-         </property>
-         <property name="maximumSize">
-          <size>
-           <width>16777215</width>
-           <height>15</height>
-          </size>
-         </property>
-         <property name="toolTip">
-          <string>Show the corresponding RGB-D image as background</string>
-         </property>
-         <property name="text">
-          <string>RGB-D</string>
-         </property>
-         <property name="checked">
-          <bool>false</bool>
-         </property>
-        </widget>
-       </item>
-       <item>
-        <widget class="QRadioButton" name="myRadioButton_Tracker_Background_RGB">
-         <property name="minimumSize">
-          <size>
-           <width>0</width>
-           <height>15</height>
-          </size>
-         </property>
-         <property name="maximumSize">
-          <size>
-           <width>16777215</width>
-           <height>15</height>
-          </size>
-         </property>
-         <property name="toolTip">
-          <string>Show the corresponding RGB image as background</string>
-         </property>
-         <property name="text">
-          <string>RGB</string>
-         </property>
-         <property name="checked">
-          <bool>false</bool>
-         </property>
-        </widget>
-       </item>
-       <item>
-        <widget class="QRadioButton" name="myRadioButton_Tracker_Background_DDD">
-         <property name="enabled">
-          <bool>true</bool>
-         </property>
-         <property name="minimumSize">
-          <size>
-           <width>0</width>
-           <height>15</height>
-          </size>
-         </property>
-         <property name="maximumSize">
-          <size>
-           <width>16777215</width>
-           <height>15</height>
-          </size>
-         </property>
-         <property name="toolTip">
-          <string>Show the corresponding Depth image as background</string>
-         </property>
-         <property name="text">
-          <string>Depth</string>
-         </property>
-         <property name="checked">
-          <bool>false</bool>
-         </property>
-        </widget>
-       </item>
-       <item>
-        <widget class="QRadioButton" name="myRadioButton_Tracker_Background_Blank">
-         <property name="minimumSize">
-          <size>
-           <width>0</width>
-           <height>15</height>
-          </size>
-         </property>
-         <property name="maximumSize">
-          <size>
-           <width>16777215</width>
-           <height>15</height>
-          </size>
-         </property>
-         <property name="toolTip">
-          <string>Show a black background</string>
-         </property>
-         <property name="text">
-          <string>Blank</string>
-         </property>
-         <property name="checked">
-          <bool>true</bool>
-         </property>
-        </widget>
-       </item>
-      </layout>
-     </widget>
+     <zorder>horizontalLayoutWidget</zorder>
     </widget>
     <widget class="QGroupBox" name="guiGroup_RenderOptions">
      <property name="geometry">
@@ -1804,8 +1643,8 @@
     <widget class="QPushButton" name="downloadSequenceBackgroundFrames">
      <property name="geometry">
       <rect>
-       <x>990</x>
-       <y>480</y>
+       <x>1000</x>
+       <y>476</y>
        <width>221</width>
        <height>27</height>
       </rect>
@@ -1864,12 +1703,174 @@
       </size>
      </property>
     </widget>
+    <widget class="QWidget" name="horizontalLayoutWidget">
+     <property name="geometry">
+      <rect>
+       <x>670</x>
+       <y>480</y>
+       <width>311</width>
+       <height>21</height>
+      </rect>
+     </property>
+     <layout class="QHBoxLayout" name="horizontalLayout">
+      <item>
+       <widget class="QRadioButton" name="myRadioButton_Tracker_Background_RGBD">
+        <property name="minimumSize">
+         <size>
+          <width>0</width>
+          <height>15</height>
+         </size>
+        </property>
+        <property name="maximumSize">
+         <size>
+          <width>16777215</width>
+          <height>15</height>
+         </size>
+        </property>
+        <property name="toolTip">
+         <string>Show the corresponding RGB-D image as background</string>
+        </property>
+        <property name="text">
+         <string>RGB-D</string>
+        </property>
+        <property name="checked">
+         <bool>false</bool>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QRadioButton" name="myRadioButton_Tracker_Background_RGB">
+        <property name="minimumSize">
+         <size>
+          <width>0</width>
+          <height>15</height>
+         </size>
+        </property>
+        <property name="maximumSize">
+         <size>
+          <width>16777215</width>
+          <height>15</height>
+         </size>
+        </property>
+        <property name="toolTip">
+         <string>Show the corresponding RGB image as background</string>
+        </property>
+        <property name="text">
+         <string>RGB</string>
+        </property>
+        <property name="checked">
+         <bool>false</bool>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QRadioButton" name="myRadioButton_Tracker_Background_DDD">
+        <property name="enabled">
+         <bool>true</bool>
+        </property>
+        <property name="minimumSize">
+         <size>
+          <width>0</width>
+          <height>15</height>
+         </size>
+        </property>
+        <property name="maximumSize">
+         <size>
+          <width>16777215</width>
+          <height>15</height>
+         </size>
+        </property>
+        <property name="toolTip">
+         <string>Show the corresponding Depth image as background</string>
+        </property>
+        <property name="text">
+         <string>Depth</string>
+        </property>
+        <property name="checked">
+         <bool>false</bool>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QRadioButton" name="myRadioButton_Tracker_Background_Blank">
+        <property name="minimumSize">
+         <size>
+          <width>0</width>
+          <height>15</height>
+         </size>
+        </property>
+        <property name="maximumSize">
+         <size>
+          <width>16777215</width>
+          <height>15</height>
+         </size>
+        </property>
+        <property name="toolTip">
+         <string>Show a black background</string>
+        </property>
+        <property name="text">
+         <string>Blank</string>
+        </property>
+        <property name="checked">
+         <bool>true</bool>
+        </property>
+       </widget>
+      </item>
+     </layout>
+    </widget>
+    <widget class="QWidget" name="layoutWidget">
+     <property name="geometry">
+      <rect>
+       <x>670</x>
+       <y>510</y>
+       <width>551</width>
+       <height>31</height>
+      </rect>
+     </property>
+     <layout class="QGridLayout" name="gridLayout">
+      <item row="1" column="1">
+       <widget class="QPushButton" name="myButton_TRACKER_Load_Motion_File">
+        <property name="enabled">
+         <bool>true</bool>
+        </property>
+        <property name="minimumSize">
+         <size>
+          <width>0</width>
+          <height>25</height>
+         </size>
+        </property>
+        <property name="toolTip">
+         <string>Choose the folder</string>
+        </property>
+        <property name="text">
+         <string>Find Path</string>
+        </property>
+       </widget>
+      </item>
+      <item row="1" column="0">
+       <widget class="QPlainTextEdit" name="myTextEdit_TRACKER_Load_Pose_RESULT">
+        <property name="enabled">
+         <bool>true</bool>
+        </property>
+        <property name="toolTip">
+         <string>Choose the path of the data to select a different background</string>
+        </property>
+        <property name="readOnly">
+         <bool>true</bool>
+        </property>
+        <property name="plainText">
+         <string/>
+        </property>
+       </widget>
+      </item>
+     </layout>
+    </widget>
    </widget>
    <widget class="QPushButton" name="selectSequence">
     <property name="geometry">
      <rect>
       <x>260</x>
-      <y>530</y>
+      <y>520</y>
       <width>131</width>
       <height>27</height>
      </rect>
@@ -1891,27 +1892,6 @@
    <zorder>mainWidget</zorder>
    <zorder>myButton_openCvWindow_Prev_8</zorder>
    <zorder>myButton_openCvWindow_Curr_8</zorder>
-   <zorder>sequenceRadio_01</zorder>
-   <zorder>sequenceRadio_02</zorder>
-   <zorder>sequenceRadio_03</zorder>
-   <zorder>sequenceRadio_04</zorder>
-   <zorder>sequenceRadio_05</zorder>
-   <zorder>sequenceRadio_06</zorder>
-   <zorder>sequenceRadio_07</zorder>
-   <zorder>sequenceRadio_08</zorder>
-   <zorder>sequenceRadio_09</zorder>
-   <zorder>sequenceRadio_10</zorder>
-   <zorder>sequenceRadio_11</zorder>
-   <zorder>sequenceRadio_12</zorder>
-   <zorder>sequenceRadio_13</zorder>
-   <zorder>sequenceRadio_14</zorder>
-   <zorder>sequenceRadio_15</zorder>
-   <zorder>sequenceRadio_16</zorder>
-   <zorder>sequenceRadio_17</zorder>
-   <zorder>sequenceRadio_18</zorder>
-   <zorder>sequenceRadio_19</zorder>
-   <zorder>sequenceRadio_20</zorder>
-   <zorder>sequenceRadio_21</zorder>
    <zorder>selectSequence</zorder>
   </widget>
   <widget class="QMenuBar" name="menuBar">
